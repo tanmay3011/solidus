@@ -347,7 +347,7 @@ module Spree
 
     def name
       if (address = bill_address || ship_address)
-        "#{address.firstname} #{address.lastname}"
+        address.full_name
       end
     end
 
