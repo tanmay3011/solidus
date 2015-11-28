@@ -17,10 +17,7 @@ module Spree
 
       def property_name=(name)
         unless name.blank?
-          unless property = Property.find_by(name: name)
-            property = Property.create(name: name, presentation: name)
-          end
-          self.property = property
+          self.property = Property.where(name: name).first_or_create(presentation: name)
         end
       end
     end
