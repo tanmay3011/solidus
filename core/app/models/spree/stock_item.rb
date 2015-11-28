@@ -35,10 +35,7 @@ module Spree
     #   or negative values are valid
     def adjust_count_on_hand(value)
       self.with_lock do
-        self.count_on_hand = self.count_on_hand + value
-        process_backorders(count_on_hand - count_on_hand_was)
-
-        self.save!
+        set_count_on_hand(count_on_hand + value)
       end
     end
 
