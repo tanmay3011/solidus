@@ -2,7 +2,7 @@ module Spree
   class Calculator < Spree::Base
     belongs_to :calculable, polymorphic: true
 
-    # This method calls a compute_<computable> method. must be overriden in concrete calculator.
+    # This method calls a compute_<computable> method. must be overridden in concrete calculator.
     #
     # It should return amount computed based on #calculable and the computable parameter
     def compute(computable)
