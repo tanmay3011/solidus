@@ -24,7 +24,7 @@ module Spree
     has_many :adjustments, as: :source
 
     validates :amount, presence: true, numericality: true
-    validates :tax_category_id, presence: true
+    validates :tax_category, presence: true
     validates_with DefaultTaxZoneValidator
 
     scope :by_zone, ->(zone) { where(zone_id: zone) }
